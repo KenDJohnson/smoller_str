@@ -1,0 +1,29 @@
+
+[package]
+name = "smoller_str_macro"
+authors = ["Ken Johnson <ken.johnso93@gmail.com>"]
+license = "MIT OR Apache-2.0"
+# repository = "https://github.com/KenDJohnson/smoller_str"
+description = "Derive macro for smoller_str"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+expect-test = "1.4.0"
+proc-macro2 = "1.0"
+quote = "1.0"
+syn = { version = "1.0", features = ["extra-traits", "full"] }
+prettyplease = "0.1"
+convert_case = "0.6.0"
+
+[dev-dependencies]
+trybuild = { version = "1.0", features = ["diff"] }
+macrotest = "1.0"
+smoller_str = { path = "../" }
+
+[[test]]
+name = "tests"
+path = "tests/derive_tests.rs"

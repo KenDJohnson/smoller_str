@@ -1,0 +1,28 @@
+[package]
+name = "smoller_str"
+authors = ["Ken Johnson <ken.johnso93@gmail.com>"]
+license = "MIT OR Apache-2.0"
+# repository = "https://github.com/KenDJohnson/smoller_str"
+description = "wrapper around smol_str adding variants for static strings"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+smol_str = "0.1.23"
+smoller_str_macro = { path = "smoller_str_macro" }
+
+[dev-dependencies]
+trybuild = { version = "1.0.66", features = ["diff"] }
+
+[workspace]
+members = ["smoller_str_macro"]
+
+[[example]]
+name = "basic"
+# crate-type = ["staticlib"]
+
+[[example]]
+name = "basic_function"
+
+[[example]]
+name = "include_function"
